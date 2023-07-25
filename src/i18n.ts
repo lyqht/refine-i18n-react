@@ -7,7 +7,7 @@ i18n.use(Backend)
     .use(detector)
     .use(initReactI18next)
     .init({
-        supportedLngs: ["en", "de"],
+        supportedLngs: ["en", "de", "ja", "fr"],
         backend: {
             loadPath: "/locales/{{lng}}/{{ns}}.json",
         },
