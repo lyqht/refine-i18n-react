@@ -10,6 +10,20 @@ import {
 } from "antd";
 import { useTranslation } from "react-i18next";
 
+const simpleLangToCountryMap: Record<string, string> = {
+    "ja": "jp",
+    "en": "us",
+    "fr": "fr",
+    "de": "de",
+    "it": "it",
+    "es": "es",
+    "ru": "ru",
+    "zh": "cn",
+    "ar": "sa",
+    "pt": "br",
+    "hi": "in"
+}
+
 export const Header: React.FC = () => {
     const { i18n } = useTranslation();
     const locale = useGetLocale();
@@ -24,10 +38,10 @@ export const Header: React.FC = () => {
             onClick: () => changeLanguage(lang),
             icon: (
                 <span style={{ marginRight: 8 }}>
-                    <Avatar size={16} src={`/images/flags/${lang}.svg`} />
+                    <Avatar size={16} src={`/images/flags/${simpleLangToCountryMap[lang].toUpperCase()}.png`} />
                 </span>
             ),
-            label: lang === "en" ? "English" : "German",
+            label: lang,
         }));
 
     return (
@@ -52,11 +66,8 @@ export const Header: React.FC = () => {
             >
                 <Button type="text">
                     <Space>
-                        <Avatar
-                            size={16}
-                            src={`/images/flags/${currentLocale}.svg`}
-                        />
-                        {currentLocale === "en" ? "English" : "German"}
+                    <Avatar size={16} src={`/images/flags/${simpleLangToCountryMap[currentLocale as string].toUpperCase()}.png`} />
+                        {currentLocale}
                         <DownOutlined />
                     </Space>
                 </Button>

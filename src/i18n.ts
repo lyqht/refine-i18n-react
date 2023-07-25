@@ -13,7 +13,7 @@ i18n.use(Backend)
         },
         ns: ["common"],
         defaultNS: "common",
-        fallbackLng: ["en", "de"],
+        fallbackLng: ["en", "de", "ja", "fr"],
     });
 
 export default i18n;
