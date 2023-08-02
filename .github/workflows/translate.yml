@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: DeepL Translate Github Action
-        uses: lyqht/deepl-translate-github-action@v2.1.0-alpha
+        uses: lyqht/deepl-translate-github-action@v2.1.0
         with:
-          target_languages: fr,ja
+          target_languages: fr,ja,es
           input_file_path: public/locales/en/common.json
           output_file_name_pattern: public/locales/{language}/common.json
           deepl_api_key: ${{ secrets.DEEPL_API_KEY }}
